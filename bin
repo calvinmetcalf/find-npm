@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+var findNPM = require('./');
+var through2 = require('through2');
+findNPM().pipe(through2(function (chunk, _, next) {
+  console.log(chunk.toString());
+  next();
+}));

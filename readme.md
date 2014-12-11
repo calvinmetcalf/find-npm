@@ -5,6 +5,6 @@ Readable stream of all combinations of words that start with n, p, and pm from t
 
 
 ```js
-var findNPM = require('find-npm');
+var findNPM = require('find-npm')();
 findNPM.pipe(...)
 ```

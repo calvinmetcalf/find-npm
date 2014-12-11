@@ -1,4 +1,5 @@
-var n = require("./n.json"), p = require("./p.json"), m=require("./m.json");
+var shuffle = require('knuth-shuffle').knuthShuffle;
+var n = shuffle(require("./n.json")), p = shuffle(require("./p.json")), m=shuffle(require("./m.json"));
 var noms = require('noms');
 var wordCache = '';
 var ni = 0;
@@ -10,11 +11,11 @@ mi = 0;
 module.exports = function () {
   return noms(function (next) {
     this.push(n[ni] + ' ' + p[pi] + ' ' + m[mi]);
-    if (++mi === ml) {
-      mi = 0;
+    if (++ni === nl) {
+      ni = 0;
       if (++pi === pl) {
         pi = 0;
-        if (++ni === nl) {
+        if (++mi === ml) {
           this.push(null);
         }
       }

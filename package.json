@@ -1,10 +1,13 @@
 {
   "name": "find-npm",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "find npm trigrams",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "find-npm"
+  },
+  "bin": {
+    "find-npm": "./bin"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,8 @@
   },
   "homepage": "https://github.com/calvinmetcalf/find-npm",
   "dependencies": {
-    "noms": "0.0.0"
+    "knuth-shuffle": "^1.0.1",
+    "noms": "0.0.0",
+    "through2": "^0.6.3"
   }
 }
