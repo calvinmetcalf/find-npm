@@ -1,6 +1,6 @@
 {
   "name": "find-npm",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "find npm trigrams",
   "main": "index.js",
   "scripts": {

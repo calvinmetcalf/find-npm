@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 var findNPM = require('./');
 var through2 = require('through2');
-console.log(process.argv);
 var all = false;
 if (process.argv[2] === '-a' || process.argv[2] === '--all' ) {
   all = true;
