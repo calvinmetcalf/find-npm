@@ -1,5 +1,7 @@
-var shuffle = require('knuth-shuffle').knuthShuffle;
-var n = shuffle(require("./n.json")), p = shuffle(require("./p.json")), m=shuffle(require("./m.json"));
+var crypto = require('crypto');
+var n = shuffle(require("./n.json")),
+p = shuffle(require("./p.json")),
+m = shuffle(require("./m.json"));
 var noms = require('noms');
 var wordCache = '';
 var ni = 0;
@@ -23,3 +25,24 @@ module.exports = function () {
     next();
   });
 };
+
+
+function shuffle(array) {
+  var counter = 0;
+  var nums = crypto.randomBytes(array.length * 4);
+  function randomValue(max) {
+    var num = nums.readUInt32LE(counter)/0xffffffff;
+    counter += 4;
+    return ~~(max * num);
+  }
+  var i = array.length;
+  var temp, randIndex;
+  while (i) {
+    randIndex = randomValue(i);
+    i--;
+    temp = array[i];
+    array[i] = array[randIndex];
+    array[randIndex] = temp;
+  }
+  return array;
+}
