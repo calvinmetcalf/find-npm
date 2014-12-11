@@ -1,0 +1,22 @@
+{
+  "name": "find-npm",
+  "version": "1.0.0",
+  "description": "find npm trigrams",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/calvinmetcalf/find-npm.git"
+  },
+  "author": "Calvin Metcalf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/calvinmetcalf/find-npm/issues"
+  },
+  "homepage": "https://github.com/calvinmetcalf/find-npm",
+  "dependencies": {
+    "noms": "0.0.0"
+  }
+}
