@@ -1,7 +1,15 @@
 #!/usr/bin/env node
 var findNPM = require('./');
 var through2 = require('through2');
+console.log(process.argv);
+var all = false;
+if (process.argv[2] === '-a' || process.argv[2] === '--all' ) {
+  all = true;
+}
 findNPM().pipe(through2(function (chunk, _, next) {
   console.log(chunk.toString());
+  if (!all) {
+    process.exit();
+  }
   next();
 }));

@@ -7,5 +7,6 @@ Readable stream of all combinations of words that start with n, p, and pm from t
 form the command line
 
 ```bash
-find-npm
+find-npm // find one
+find-npm // find all
 ```
